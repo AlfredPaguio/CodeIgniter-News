@@ -17,6 +17,7 @@ class News extends BaseController
         ];
 
         return view('templates/header', $data)
+            . view('templates/navbar')
             . view('news/index')
             . view('templates/footer');
     }
@@ -34,6 +35,7 @@ class News extends BaseController
         $data['title'] = $data['news']['title'];
 
         return view('templates/header', $data)
+            . view('templates/navbar')
             . view('news/view')
             . view('templates/footer');
     }
@@ -46,6 +48,7 @@ class News extends BaseController
         if (! $this->request->is('post')) {
             // The form is not submitted, so returns the form.
             return view('templates/header', ['title' => 'Create a news item'])
+                . view('templates/navbar')
                 . view('news/create')
                 . view('templates/footer');
         }
@@ -72,6 +75,7 @@ class News extends BaseController
         ]);
 
         return view('templates/header', ['title' => 'Create a news item'])
+            . view('templates/navbar')
             . view('news/success')
             . view('templates/footer');
     }

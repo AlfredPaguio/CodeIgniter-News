@@ -1,8 +1,10 @@
 <div class="card">
-  <div class="card-header">
+<div class="card-body">
+  <h5 class="card-title">
   <?= esc($news['title']) ?>
-  </div>
+  </h5>
   <div class="card-body">
-    <p><?= esc($news['body']) ?></p>
+    <p class="card-text"><?= esc($news['body']) ?></p>
   </div>
+</div>
 </div>

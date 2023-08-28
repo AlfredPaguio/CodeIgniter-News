@@ -1,3 +1,3 @@
 <div class="alert alert-success" role="alert">
-    News item created successfully.
+    <i class="fa-solid fa-check"></i>News item created successfully.
 </div>
