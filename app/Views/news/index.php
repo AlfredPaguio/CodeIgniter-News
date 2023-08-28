@@ -8,7 +8,8 @@
                 <div class="card-text">
                     <?= esc($news_item['body']) ?>
                 </div>
-                <a href="/news/<?= esc($news_item['slug'], 'url') ?>" class="btn btn-secondary mt-3">View Article</a>
+                <!-- <a href="/news/<?= esc($news_item['slug'], 'url') ?>" class="btn btn-secondary mt-3">View Article</a> -->
+                <a href="<?= url_to('news_item', esc($news_item['slug'], 'url')) ?>" class="btn btn-secondary mt-3">View Article</a>
             </div>
         </div>
     <?php endforeach ?>

@@ -62,6 +62,7 @@ class News extends BaseController
         ])) {
             // The validation fails, so returns the form.
             return view('templates/header', ['title' => 'Create a news item'])
+                . view('templates/navbar')
                 . view('news/create')
                 . view('templates/footer');
         }

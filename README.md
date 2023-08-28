@@ -14,7 +14,7 @@ As a passionate developer, I've been eager to dive into the CodeIgniter framewor
 
 Your feedback, suggestions, and contributions are highly encouraged and appreciated!
 
-## Technologies and Tools Used
+## Technologies Used
 
 In the pursuit of my coding journey and project development, I used a range of technologies:
 
@@ -31,7 +31,7 @@ These core technologies formed the backbone of this project.
 - [CodeIgniter News Project](#codeigniter-news-project)
   - [Motivation](#motivation)
   - [Project Goals](#project-goals)
-  - [Technologies and Tools Used](#technologies-and-tools-used)
+  - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Learning Experience with Codeigniter](#learning-experience-with-codeigniter)
   - [Database Migrations](#database-migrations)
