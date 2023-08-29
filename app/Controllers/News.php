@@ -74,17 +74,18 @@ class News extends BaseController
         }
 
         $model = model(NewsModel::class);
-
+        $validatedData = $this->validator->getValidated();
+        // $model->save([
+        //     'title' => $post['title'],
+        //     'slug'  => url_title($post['title'], '-', true),
+        //     'body'  => $post['body'],
+        // ]);
         $model->save([
-            'title' => $post['title'],
-            'slug'  => url_title($post['title'], '-', true),
-            'body'  => $post['body'],
+            'title' => $validatedData['title'],
+            'slug'  => url_title($validatedData['title'], '-', true),
+            'body'  => $validatedData['body'],
         ]);
 
-        // return view('templates/header', ['title' => 'Create a news item'])
-        //     . view('templates/navbar')
-        //     . view('news/success')
-        //     . view('templates/footer');
         return view('news/success', ['title' => 'Create a news item']);
     }
 }

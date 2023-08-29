@@ -1,6 +1,6 @@
 <?php
 $navItems = [
-    '' => 'Home',
+    ''     => 'Home',
     'news' => 'News',
 ];
 $currentSegment = service('request')->uri->getSegment(1);
