@@ -14,8 +14,10 @@
         "codeigniter4/framework": "^4.0"
     },
     "require-dev": {
+        "codeigniter/coding-standard": "^1.7",
         "fakerphp/faker": "^1.9",
         "mikey179/vfsstream": "^1.6",
+        "nexusphp/cs-config": "^3.14",
         "phpunit/phpunit": "^9.1"
     },
     "autoload": {

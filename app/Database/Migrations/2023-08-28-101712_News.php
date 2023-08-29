@@ -10,8 +10,8 @@ class News extends Migration
     {
         $this->forge->addField([
             'id' => [
-                'type'           => 'INT',
-                //'constraint'     => 5,
+                'type' => 'INT',
+                // 'constraint'     => 5,
                 'unsigned'       => true,
                 'auto_increment' => true,
             ],
@@ -21,9 +21,9 @@ class News extends Migration
                 'default'    => 'No Title',
             ],
             'slug' => [
-                'type' => 'TEXT',
+                'type'       => 'TEXT',
                 'constraint' => '128',
-                'unique'    => true,
+                'unique'     => true,
             ],
             'body' => [
                 'type' => 'TEXT',
