@@ -25,6 +25,8 @@ class News extends BaseController
         //     . view('templates/navbar')
         //     . view('news/index')
         //     . view('templates/footer');
+        //sort to ascending order
+        asort($data);
         return view('news/index', $data);
     }
 

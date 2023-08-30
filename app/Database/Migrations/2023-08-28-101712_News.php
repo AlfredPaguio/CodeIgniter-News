@@ -28,6 +28,14 @@ class News extends Migration
             'body' => [
                 'type' => 'TEXT',
             ],
+            'created_at' => [
+                'type' => 'datetime',
+                'default' => date('Y-m-d H:i:s'),
+            ],
+            'updated_at' => [
+                'type' => 'datetime',
+                'default' => date('Y-m-d H:i:s'),
+            ],
             'status' => [
                 'type'       => 'ENUM',
                 'constraint' => ['publish', 'pending', 'scraped'],

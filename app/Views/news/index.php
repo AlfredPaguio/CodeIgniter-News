@@ -5,34 +5,44 @@ List of News
 
 <?= $this->section('content') ?>
 
-<?php if (! empty($news) && is_array($news)): ?>
-<a type="button" class="btn btn-primary mb-4"
-	href="<?= url_to('news_add') ?>">Add News</a>
+<?php
 
-<?php foreach ($news as $news_item): ?>
-<div class="card mb-4">
-	<div class="card-body">
-		<h3 class="card-title">
-			<?= esc($news_item['title']) ?>
-		</h3>
-		<div class="card-text">
-			<?= esc($news_item['body']) ?>
+use CodeIgniter\I18n\Time;
+
+helper('array');
+?>
+
+<?php if (!empty($news) && is_array($news)) : ?>
+	<?php
+		$updated_at_column = array_column($news, 'updated_at');
+		array_multisort($updated_at_column, SORT_DESC, $news);
+	?>
+	<a type="button" class="btn btn-primary mb-4" href="<?= url_to('news_add') ?>">Add News</a>
+
+	<div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+		<div class="list-group">
+			<?php foreach ($news as $news_item) : ?>
+
+				<a href="<?= url_to('news_item', esc($news_item['slug'], 'url')) ?>" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+					<div class="d-flex gap-2 w-100 justify-content-between">
+						<div>
+							<h6 class="mb-0"><?= esc($news_item['title']) ?></h6>
+							<p class="mb-0 opacity-75"><?= esc($news_item['body']) ?></p>
+						</div>
+						<small class="opacity-50 text-nowrap"><?= esc(Time::parse($news_item['updated_at'])->humanize()) ?></small>
+					</div>
+				</a>
+
+			<?php endforeach ?>
 		</div>
-		<!-- <a href="/news/<?= esc($news_item['slug'], 'url') ?>"
-		class="btn btn-secondary mt-3">View Article</a> -->
-		<a href="<?= url_to('news_item', esc($news_item['slug'], 'url')) ?>"
-			class="btn btn-secondary mt-3">View Article</a>
 	</div>
-</div>
-<?php endforeach ?>
 
 
-<?php else: ?>
+<?php else : ?>
 
-<h3>No News</h3>
-<a type="button" class="btn btn-primary"
-	href="<?= url_to('news_add') ?>">Add news</a>
-<p>Unable to find any news for you.</p>
+	<h3>No News</h3>
+	<a type="button" class="btn btn-primary" href="<?= url_to('news_add') ?>">Add news</a>
+	<p>Unable to find any news for you.</p>
 
 <?php endif ?>
 
