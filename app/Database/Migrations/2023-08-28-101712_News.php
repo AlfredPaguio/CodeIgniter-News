@@ -30,11 +30,11 @@ class News extends Migration
             ],
             'created_at' => [
                 'type' => 'datetime',
-                'default' => date('Y-m-d H:i:s'),
+                'null' => true,
             ],
             'updated_at' => [
                 'type' => 'datetime',
-                'default' => date('Y-m-d H:i:s'),
+                'null' => true,
             ],
             'status' => [
                 'type'       => 'ENUM',
