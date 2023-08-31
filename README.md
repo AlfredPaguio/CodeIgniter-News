@@ -19,7 +19,7 @@ Your feedback, suggestions, and contributions are highly encouraged and apprecia
 In the pursuit of my coding journey and project development, I used a range of technologies:
 
 - **Back-End Framework:** CodeIgniter 4
-- **Front-End Framework:** Bootstrap 5
+- **Front-End Framework:** MDBootstrap 5
 - **Programming Language:** PHP
 - **Icon Library:** FontAwesome
 - **Database Management:** MySQL
@@ -71,7 +71,7 @@ By following these steps, you'll have the project up and running with all the ne
 
 # Learning Experience with Codeigniter
 
-During my learning experience, I found that using Codeigniter requires more manual effort, especially when compared to Laravel and Laravel Livewire. In Codeigniter, I noticed that I had to create views and controllers manually. In contrast, with Laravel, I could quickly generate Livewire components using the command `php artisan make:livewire Navbar`, or create controllers with `php artisan make:controller Navbar`.
+During my learning experience, I found that using Codeigniter requires more manual effort, especially when compared to Laravel and Laravel Livewire. In Codeigniter, ~~I noticed that I had to create views and controllers manually I can quickly generate controller too by using `php spark make:controller`. In contrast, with Laravel, I could quickly generate Livewire components using the command `php artisan make:livewire Navbar`, or create controllers with `php artisan make:controller Navbar`~~ I can quickly generate controllers using `php spark make:controller`, which is similar to Laravel's approach of generating Livewire components with `php artisan make:livewire Navbar` or creating controllers using `php artisan make:controller Navbar`, I believe that reading documentation is very helpful.
 
 ## Database Migrations
 
