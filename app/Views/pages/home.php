@@ -11,7 +11,6 @@ Home
 
 use CodeIgniter\I18n\Time;
 
-helper('array');
 ?>
 
 
@@ -24,16 +23,14 @@ helper('array');
 
     </div>
 
-    <div class="row my-5">
+    <hr class="hr" />
+
+    <div class="row">
         <div class="col-md-9 mb-4">
 
             <h4 class="mb-2"><strong>Recent News</strong></h4>
             <section>
-                <?php if (!empty($news) && is_array($news)) :
-                    $updated_at_column = array_column($news, 'updated_at');
-                    array_multisort($updated_at_column, SORT_DESC, $news);
-                ?>
-
+                <?php if (!empty($news) && is_array($news)) : ?>
                     <!-- Post -->
                     <?php foreach ($news as $news_item) : ?>
                         <div class="row">
@@ -50,7 +47,7 @@ helper('array');
                                 <div class="d-flex gap-2 w-100 justify-content-between">
                                     <div>
                                         <h5 class="mb-0"><?= esc($news_item['title']) ?></h5>
-                                        <p class="mb-0 opacity-75">subblablaba or topic or pending?</p>
+                                        <p class="mb-0 opacity-75">Topic? something like Programming > PHP > Codeigniter</p>
                                     </div>
                                     <small class="opacity-50 text-nowrap"><?= esc(Time::parse($news_item['updated_at'])->humanize()) ?></small>
                                 </div>
@@ -59,7 +56,7 @@ helper('array');
                                 <?= esc($news_item['body']) ?>
                                 </p>
 
-                                <button type="button" class="btn btn-primary">Read</button>
+                                <a type="button" class="btn btn-primary" href="<?= url_to('news_item', esc($news_item['slug'], 'url')) ?>">Read</a>
                             </div>
                         </div>
                     <?php endforeach ?>
@@ -89,7 +86,7 @@ helper('array');
                     </p>
                     <a role="button" class="btn btn-primary" href="https://codeigniter4.github.io/userguide/intro/index.html" target="_blank">Go to their documentation<i class="fas fa-right-long ms-2"></i></a>
                 </section>
-
+                
                 <section class="text-center border-bottom pb-4 mb-4">
                     <div class="bg-image hover-overlay ripple mb-4">
                         <img src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/content/en/_mdb5/standard/about/assets/mdb5-about.webp" class="img-fluid" />
@@ -109,9 +106,10 @@ helper('array');
                 <section class="text-center">
                     <h5 class="mb-4">Learn the newest Bootstrap 5</h5>
 
-                    <div class="embed-responsive embed-responsive-16by9 shadow-4-strong">
-                        <iframe class="embed-responsive-item rounded" src="https://www.youtube.com/embed/c9B4TPnak1A" allowfullscreen></iframe>
+                    <div class="embed-responsive embed-responsive-16by9 shadow-4-strong mb-2">
+                        <iframe class="embed-responsive-item rounded" src="" allowfullscreen></iframe>
                     </div>
+                    <a role="button" class="btn btn-primary" href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank">Go to their documentation<i class="fas fa-right-long ms-2"></i></a>
                 </section>
 
 

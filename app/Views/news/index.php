@@ -9,14 +9,9 @@ List of News
 
 use CodeIgniter\I18n\Time;
 
-helper('array');
 ?>
 
 <?php if (!empty($news) && is_array($news)) : ?>
-	<?php
-	$updated_at_column = array_column($news, 'updated_at');
-	array_multisort($updated_at_column, SORT_DESC, $news);
-	?>
 	<div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-3 align-items-center justify-content-center">
 		<h1>Total Number of News: <?= esc(count($news)) ?></h1>
 		<a type="button" class="btn btn-primary rounded-5" href="<?= url_to('news_add') ?>"><i class="fa-solid fa-plus"></i> Add News</a>

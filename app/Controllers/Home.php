@@ -14,7 +14,7 @@ class Home extends BaseController
         $model = model(NewsModel::class);
 
         $data = [
-            'news'  => $model->getNews(false,5),
+            'news'  => $model->getNews(null, 5),
         ];
 
         return view('pages/home', $data);
