@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>News - <?= $this->renderSection('page_title', true) ?></title> <!-- or esc($title) -->
   <?= link_tag(base_url('assets/css/style.css'), 'stylesheet', 'text/css') ?>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <?= link_tag('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap', 'stylesheet') ?>
+  <?= link_tag('https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css', 'stylesheet', 'text/css') ?>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
@@ -35,18 +36,18 @@
         <div class="col-md-3">
           <h5>Connect</h5>
           <ul class="list-unstyled">
-            <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-            <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-            <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-            <li><a href="#"><i class="fab fa-github"></i> GitHub</a></li>
+            <li><?= anchor('https://www.facebook.com/FleetingComet', '<i class="fab fa-facebook"></i> Facebook'); ?></li>
+            <li><?= anchor('https://www.linkedin.com/in/alfredpaguio', '<i class="fab fa-linkedin"></i> LinkedIn'); ?></li>
+            <li><?= anchor('https://github.com/AlfredPaguio/CodeIgniter-News', '<i class="fab fa-github"></i> Source code'); ?></li>
+            <li><?= anchor('https://github.com/AlfredPaguio', '<i class="fab fa-github"></i> My GitHub'); ?></li>
           </ul>
         </div>
       </div>
-      <em>&copy; 2022</em>
+      <em>&copy; 2023</em>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <?= script_tag('https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js'); ?>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <?= script_tag(base_url('assets/js/main.js')); ?>
 

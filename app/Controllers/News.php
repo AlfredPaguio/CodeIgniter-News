@@ -18,15 +18,7 @@ class News extends BaseController
 
         $data = [
             'news'  => $model->getNews(),
-            'title' => 'News archive',
         ];
-
-        // return view('templates/header', $data)
-        //     . view('templates/navbar')
-        //     . view('news/index')
-        //     . view('templates/footer');
-        //sort to ascending order
-        asort($data);
         return view('news/index', $data);
     }
 
@@ -41,11 +33,6 @@ class News extends BaseController
         }
 
         $data['title'] = $data['news']['title'];
-
-        // return view('templates/header', $data)
-        //     . view('templates/navbar')
-        //     . view('news/view')
-        //     . view('templates/footer');
         return view('news/view', $data);
     }
 
@@ -56,10 +43,6 @@ class News extends BaseController
         // Checks whether the form is submitted.
         if (! $this->request->is('post')) {
             // The form is not submitted, so returns the form.
-            // return view('templates/header', ['title' => 'Create a news item'])
-            //     . view('templates/navbar')
-            //     . view('news/create')
-            //     . view('templates/footer');
             return view('news/create', ['title' => 'Create a news item']);
         }
 
@@ -68,10 +51,6 @@ class News extends BaseController
         // Checks whether the submitted data passed the validation rules.
         if (! $this->validateData($post, $this->rules)) {
             // The validation fails, so returns the form.
-            // return view('templates/header', ['title' => 'Create a news item'])
-            //     . view('templates/navbar')
-            //     . view('news/create')
-            //     . view('templates/footer');
             return view('news/create', ['title' => 'Create a news item']);
         }
 
