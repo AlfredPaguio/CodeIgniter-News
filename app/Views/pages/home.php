@@ -52,7 +52,7 @@ use CodeIgniter\I18n\Time;
                                     <small class="opacity-50 text-nowrap"><?= esc(Time::parse($news_item['updated_at'])->humanize()) ?></small>
                                 </div>
                                 <!-- <h5>Very long post title</h5> -->
-                                <p>
+                                <p class="text-truncate">
                                 <?= esc($news_item['body']) ?>
                                 </p>
 

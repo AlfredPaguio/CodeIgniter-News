@@ -21,7 +21,7 @@ foreach ($segments as $segment) {
 ?>
 
 <?php if (end($breadcrumbs)["label"] != 'Home') : ?>
-    <div class="p-5 bg-light mb-4">
+    <div class="p-5 bg-dark text-light gradient-dark-custom mb-4">
         <h1 class=""><?= esc(end($breadcrumbs)["label"]) ?></h1>
         <!-- Breadcrumb -->
         <nav class="d-flex">
