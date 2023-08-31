@@ -32,32 +32,32 @@ use CodeIgniter\I18n\Time;
             <section>
                 <div class="d-flex">
                     <?php if (!empty($news) && is_array($news)) : ?>
-                        <div class="overflow-auto">
-                            <?php foreach ($news as $news_item) : ?>
-                                <div class="card m-2">
-                                    <div class="row g-0">
-                                        <div class="col-md-4">
-                                            <img src="https://fakeimg.pl/780x520?text=Placeholder" class="img-fluid rounded-start" />
-                                        </div>
-                                        <div class="col-md-8">
-                                            <div class="card-body">
-                                                <div class="d-flex gap-2 w-100 justify-content-between">
-                                                    <div>
-                                                        <h5 class="mb-0"><?= esc($news_item['title']) ?></h5>
-                                                        <p class="mb-0 opacity-75">Topic? something like Programming > PHP > Codeigniter</p>
-                                                    </div>
-                                                    <small class="text-muted">Last updated <?= esc(Time::parse($news_item['updated_at'])->humanize()) ?></small>
+                    <div class="overflow-auto">
+                        <?php foreach ($news as $news_item) : ?>
+                            <div class="card m-2">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="https://fakeimg.pl/780x520?text=Placeholder" class="img-fluid rounded-start" />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <div class="d-flex gap-2 w-100 justify-content-between">
+                                                <div>
+                                                    <h5 class="mb-0"><?= esc($news_item['title']) ?></h5>
+                                                    <p class="mb-0 opacity-75">Topic? something like Programming > PHP > Codeigniter</p>
                                                 </div>
-                                                <p class="card-text text-truncate">
-                                                    <?= esc($news_item['body']) ?>
-                                                </p>
-                                                <a type="button" class="btn btn-primary" href="<?= url_to('news_item', esc($news_item['slug'], 'url')) ?>">Read</a>
+                                                <small class="text-muted">Last updated <?= esc(Time::parse($news_item['updated_at'])->humanize()) ?></small>
                                             </div>
+                                            <p class="card-text text-truncate">
+                                                <?= esc($news_item['body']) ?>
+                                            </p>
+                                            <a type="button" class="btn btn-primary" href="<?= url_to('news_item', esc($news_item['slug'], 'url')) ?>">Read</a>
                                         </div>
                                     </div>
                                 </div>
-                            <?php endforeach ?>
-                        </div>
+                            </div>
+                        <?php endforeach ?>
+                    </div>
                 </div>
             </section>
         <?php else : ?>
