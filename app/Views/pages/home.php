@@ -30,36 +30,35 @@ use CodeIgniter\I18n\Time;
 
             <h4 class="mb-2"><strong>Recent News</strong></h4>
             <section>
-                <?php if (!empty($news) && is_array($news)) : ?>
-                    <!-- Post -->
-                    <?php foreach ($news as $news_item) : ?>
-                        <div class="row">
-                            <div class="col-md-4 mb-4">
-                                <div class="bg-image hover-overlay shadow-1-strong rounded ripple" data-mdb-ripple-color="light">
-                                    <img src="https://fakeimg.pl/780x520?text=Placeholder" class="img-fluid" />
-                                    <a href="#!">
-                                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <div class="col-md-8 mb-4">
-                                <div class="d-flex gap-2 w-100 justify-content-between">
-                                    <div>
-                                        <h5 class="mb-0"><?= esc($news_item['title']) ?></h5>
-                                        <p class="mb-0 opacity-75">Topic? something like Programming > PHP > Codeigniter</p>
+                <div class="d-flex">
+                    <?php if (!empty($news) && is_array($news)) : ?>
+                        <div class="overflow-auto">
+                            <?php foreach ($news as $news_item) : ?>
+                                <div class="card m-2">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="https://fakeimg.pl/780x520?text=Placeholder" class="img-fluid rounded-start" />
+                                        </div>
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <div class="d-flex gap-2 w-100 justify-content-between">
+                                                    <div>
+                                                        <h5 class="mb-0"><?= esc($news_item['title']) ?></h5>
+                                                        <p class="mb-0 opacity-75">Topic? something like Programming > PHP > Codeigniter</p>
+                                                    </div>
+                                                    <small class="text-muted">Last updated <?= esc(Time::parse($news_item['updated_at'])->humanize()) ?></small>
+                                                </div>
+                                                <p class="card-text text-truncate">
+                                                    <?= esc($news_item['body']) ?>
+                                                </p>
+                                                <a type="button" class="btn btn-primary" href="<?= url_to('news_item', esc($news_item['slug'], 'url')) ?>">Read</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <small class="opacity-50 text-nowrap"><?= esc(Time::parse($news_item['updated_at'])->humanize()) ?></small>
                                 </div>
-                                <!-- <h5>Very long post title</h5> -->
-                                <p class="text-truncate">
-                                <?= esc($news_item['body']) ?>
-                                </p>
-
-                                <a type="button" class="btn btn-primary" href="<?= url_to('news_item', esc($news_item['slug'], 'url')) ?>">Read</a>
-                            </div>
+                            <?php endforeach ?>
                         </div>
-                    <?php endforeach ?>
+                </div>
             </section>
         <?php else : ?>
             <div class="d-flex flex-column align-items-center justify-content-center">
@@ -86,7 +85,7 @@ use CodeIgniter\I18n\Time;
                     </p>
                     <a role="button" class="btn btn-primary" href="https://codeigniter4.github.io/userguide/intro/index.html" target="_blank">Go to their documentation<i class="fas fa-right-long ms-2"></i></a>
                 </section>
-                
+
                 <section class="text-center border-bottom pb-4 mb-4">
                     <div class="bg-image hover-overlay ripple mb-4">
                         <img src="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/content/en/_mdb5/standard/about/assets/mdb5-about.webp" class="img-fluid" />
