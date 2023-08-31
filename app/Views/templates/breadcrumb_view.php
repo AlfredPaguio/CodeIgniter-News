@@ -1,13 +1,9 @@
 <?php
-
-helper('array');
-
 //* this code is based on https://stackoverflow.com/a/21392434
 // Add Home breadcrumb
 $breadcrumbs[] = [
     'label' => 'Home',
     'url' => site_url(),
-    'icon' => '<i class="fa-solid fa-house" width="16" height="16"></i>',
 ];
 
 // Get current route segments
@@ -20,30 +16,31 @@ foreach ($segments as $segment) {
     $breadcrumbs[] = [
         'label' => ucfirst($segment), // Capitalize segment name
         'url' => site_url($urlSegments),
-        'icon' => '',
     ];
 }
 ?>
-<?php if (end($breadcrumbs)["label"] != 'Home') : ?>
-<div class="container my-1">
-    <nav aria-label="breadcrumb">
-        <ol class="breadcrumb breadcrumb-chevron p-3 bg-body-tertiary rounded-3">
-            <?php foreach ($breadcrumbs as $breadcrumb) : ?>
 
-                <?php if (!empty($breadcrumb['url'])) : ?>
-                    <li class="breadcrumb-item">
-                        <a class="link-body-emphasis text-decoration-none" href="<?= esc($breadcrumb['url']) ?>">
-                            <?= $breadcrumb['icon'] ?>
-                            <span class="<?php if ($breadcrumb['label'] == 'Home') : ?>visually-hidden<?php endif; ?>"><?= esc($breadcrumb['label']) ?></span>
-                        </a>
-                    </li>
-                <?php else : ?>
-                    <li class="breadcrumb-item active" aria-current="page">
-                        <?= esc($breadcrumb['label']) ?>
-                    </li>
-                <?php endif; ?>
-            <?php endforeach; ?>
-        </ol>
-    </nav>
-</div>
+<?php if (end($breadcrumbs)["label"] != 'Home') : ?>
+    <div class="p-5 bg-light mb-4">
+        <h1 class=""><?= esc(end($breadcrumbs)["label"]) ?></h1>
+        <!-- Breadcrumb -->
+        <nav class="d-flex">
+            <h6 class="mb-0">
+
+                <?php foreach ($breadcrumbs as $index => $breadcrumb) : ?>
+
+                    <?php if (!empty($breadcrumb['url'])) : ?>
+                        <a href="<?= esc($breadcrumb['url']) ?>" class="text-reset"><?= esc($breadcrumb['label']) ?></a>
+                    <?php else : ?>
+                        <span href="" class="text-reset" aria-current="page"><u><?= esc($breadcrumb['label']) ?></u></span>
+                    <?php endif; ?>
+                    <!-- I need to know if this is the final iteration -->
+                    <?php if ($index < count($breadcrumbs) - 1) : ?>
+                        <span>/</span>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </h6>
+        </nav>
+        <!-- Breadcrumb -->
+    </div>
 <?php endif; ?>
