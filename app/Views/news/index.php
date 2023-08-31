@@ -14,12 +14,15 @@ helper('array');
 
 <?php if (!empty($news) && is_array($news)) : ?>
 	<?php
-		$updated_at_column = array_column($news, 'updated_at');
-		array_multisort($updated_at_column, SORT_DESC, $news);
+	$updated_at_column = array_column($news, 'updated_at');
+	array_multisort($updated_at_column, SORT_DESC, $news);
 	?>
-	<a type="button" class="btn btn-primary mb-4" href="<?= url_to('news_add') ?>">Add News</a>
+	<div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-3 align-items-center justify-content-center">
+		<h1>Total Number of News: <?= esc(count($news)) ?></h1>
+		<a type="button" class="btn btn-primary rounded-5" href="<?= url_to('news_add') ?>"><i class="fa-solid fa-plus"></i> Add News</a>
+	</div>
 
-	<div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-5 align-items-center justify-content-center">
+	<div class="d-flex flex-column flex-md-row p-4 gap-4 py-md-3 align-items-center justify-content-center">
 		<div class="list-group">
 			<?php foreach ($news as $news_item) : ?>
 
@@ -40,9 +43,11 @@ helper('array');
 
 <?php else : ?>
 
-	<h3>No News</h3>
-	<a type="button" class="btn btn-primary" href="<?= url_to('news_add') ?>">Add news</a>
-	<p>Unable to find any news for you.</p>
+	<div class="d-flex flex-column align-items-center justify-content-center">
+		<h3 class="mb-3">No News</h3>
+		<a href="<?= url_to('news_add') ?>" class="btn btn-primary mb-3"><i class="fa-solid fa-plus"></i> Add News</a>
+		<p class="text-muted">Unable to find any news for you.</p>
+	</div>
 
 <?php endif ?>
 

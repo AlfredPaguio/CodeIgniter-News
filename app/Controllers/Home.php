@@ -2,11 +2,21 @@
 
 namespace App\Controllers;
 
+use App\Models\NewsModel;
+
+
 class Home extends BaseController
 {
 
+    
     public function index(): string
     {
-        return view('pages/home');
+        $model = model(NewsModel::class);
+
+        $data = [
+            'news'  => $model->getNews(false,5),
+        ];
+
+        return view('pages/home', $data);
     }
 }
